@@ -1,2 +1,2 @@
 # rpx-xui-test
-test infrastructure
+test githuh action
