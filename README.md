@@ -1,2 +1,2 @@
 # rpx-xui-test
-test githuh action
+test repo for github action workflow
