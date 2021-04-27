@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CreateCaseFiltersSelection, HttpError } from '@hmcts/ccd-case-ui-toolkit';
+import { CreateCaseFiltersSelection, HttpError } from '@hmcts/rpx-xui-test';
 
 @Component({
     selector: 'case-create-consumer',

@@ -1,11 +1,11 @@
-# ccd-case-ui-toolkit
+# rpx-xui-test
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Build Status](https://travis-ci.org/hmcts/ccd-case-ui-toolkit.svg?branch=master)](https://travis-ci.org/hmcts/ccd-case-ui-toolkit)
-[![codecov](https://codecov.io/gh/hmcts/ccd-case-ui-toolkit/branch/master/graph/badge.svg)](https://codecov.io/gh/hmcts/ccd-case-ui-toolkit)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/93a438c61ff54973bc09a4387497e282)](https://www.codacy.com/app/adr1ancho/ccd-case-ui-toolkit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=hmcts/ccd-case-ui-toolkit&amp;utm_campaign=Badge_Grade)
-[![Known Vulnerabilities](https://snyk.io/test/github/hmcts/ccd-case-ui-toolkit/badge.svg)](https://snyk.io/test/github/hmcts/ccd-case-ui-toolkit)
-[![HitCount](http://hits.dwyl.io/hmcts/ccd-case-ui-toolkit.svg)](#ccd-case-ui-toolkit)
-[![Issue Stats](http://issuestats.com/github/hmcts/ccd-case-ui-toolkit/badge/pr)](http://issuestats.com/github/hmcts/ccd-case-ui-toolkit)
+[![Build Status](https://travis-ci.org/hmcts/rpx-xui-test.svg?branch=master)](https://travis-ci.org/hmcts/rpx-xui-test)
+[![codecov](https://codecov.io/gh/hmcts/rpx-xui-test/branch/master/graph/badge.svg)](https://codecov.io/gh/hmcts/rpx-xui-test)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/93a438c61ff54973bc09a4387497e282)](https://www.codacy.com/app/adr1ancho/rpx-xui-test?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=hmcts/rpx-xui-test&amp;utm_campaign=Badge_Grade)
+[![Known Vulnerabilities](https://snyk.io/test/github/hmcts/rpx-xui-test/badge.svg)](https://snyk.io/test/github/hmcts/rpx-xui-test)
+[![HitCount](http://hits.dwyl.io/hmcts/rpx-xui-test.svg)](#rpx-xui-test)
+[![Issue Stats](http://issuestats.com/github/hmcts/rpx-xui-test/badge/pr)](http://issuestats.com/github/hmcts/rpx-xui-test)
 
 # Quick Start (for local development and testing)
 
@@ -27,7 +27,7 @@ In your project folder that should consume the library:
 cd case-management-web
 
 # Link you library to the project
-yarn link "@hmcts/ccd-case-ui-toolkit"
+yarn link "@hmcts/rpx-xui-test"
 
 yarn start
 
@@ -50,10 +50,10 @@ In you project folder that should consume the library:
 cd case-management-web
 
 # Remove existing toolkit dist
-rm -rf node_modules/\@hmcts/ccd-case-ui-toolkit/dist
+rm -rf node_modules/\@hmcts/rpx-xui-test/dist
 
 # Link you library to the project
-cp <location of ccd-case-ui-toolkit>/dist node_modules/\@hmcts/ccd-case-ui-toolkit
+cp <location of rpx-xui-test>/dist node_modules/\@hmcts/rpx-xui-test
 
 yarn start
 
@@ -64,7 +64,7 @@ You can also have a quick look at an example usage of the UI Toolkit demo projec
 # build UI Toolkit
 yarn build:esm
 
-# copy UI Toolkit dist folder to demo/node_modules/@hmcts/ccd-case-ui-toolkit/dist
+# copy UI Toolkit dist folder to demo/node_modules/@hmcts/rpx-xui-test/dist
 yarn build:demo
 
 # start demo app and stub server in same process

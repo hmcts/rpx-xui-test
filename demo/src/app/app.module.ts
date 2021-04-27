@@ -18,7 +18,7 @@ WorkbasketFiltersModule, CaseListFiltersModule,
   CreateCaseFiltersModule,
   CaseTimelineModule,
   SearchFiltersModule,
-  SearchResultModule} from '@hmcts/ccd-case-ui-toolkit';
+  SearchResultModule} from '@hmcts/rpx-xui-test';
 import { ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 import { CaseProgressConsumerComponent } from './case-progress-consumer.component';
 import { CoreComponent } from './core.component';

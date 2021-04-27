@@ -272,9 +272,9 @@
   dependencies:
     tslib "^1.9.0"
 
-"@hmcts/ccd-case-ui-toolkit@2.9.0":
+"@hmcts/rpx-xui-test@2.9.0":
   version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@hmcts/ccd-case-ui-toolkit/-/ccd-case-ui-toolkit-2.9.0.tgz#b00e54c7b28621bda2ccef89ac71c9139343cf59"
+  resolved "https://registry.yarnpkg.com/@hmcts/rpx-xui-test/-/rpx-xui-test-2.9.0.tgz#b00e54c7b28621bda2ccef89ac71c9139343cf59"
   dependencies:
     "@angular/cli" "^6.0.8"
     "@angular/compiler-cli" "~7.0.3"

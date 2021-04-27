@@ -1,7 +1,7 @@
-# `ccd-case-ui-toolkit` demo project
-[![Heroku CI Status](https://heroku-badge.herokuapp.com/?app=heroku-badge&style=flat)](https://ccd-case-ui-toolkit-demo.herokuapp.com/)
+# `rpx-xui-test` demo project
+[![Heroku CI Status](https://heroku-badge.herokuapp.com/?app=heroku-badge&style=flat)](https://rpx-xui-test-demo.herokuapp.com/)
 
-> This folder contains a demo-project for [ccd-case-ui-toolkit](https://github.com/hmcts/ccd-case-ui-toolkit). This demo project may help you to test whether your library supports JIT build or not.
+> This folder contains a demo-project for [rpx-xui-test](https://github.com/hmcts/rpx-xui-test). This demo project may help you to test whether your library supports JIT build or not.
 >
 > - `src` folder contains Angular project that is built using [@angular/cli](https://www.npmjs.com/package/@angular/cli). This demo project utilizes ESM (pure ES2015) sources of your library to do [JIT](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html) (just-in-time) compilation.
 >
@@ -15,7 +15,7 @@ Demo-project is created as an alternative to `npm link` command. You may simply 
 # Install all dependencies
 yarn install
 
-# Start build of ccd-case-ui-toolkit in esm watch mode
+# Start build of rpx-xui-test in esm watch mode
 yarn build:esm
 
 # Open second terminal and assuming that you are already in case-ui-toolkit/demo folder
@@ -39,13 +39,13 @@ There is a `heroku-publish.sh` script in this folder that can be used as:
 
 ./heroku-publish.sh
 
-# After that the app is accessible in heroku under: https://ccd-case-ui-toolkit-demo.herokuapp.com/
+# After that the app is accessible in heroku under: https://rpx-xui-test-demo.herokuapp.com/
 ```
 
 # File Structure
 
 ```
-ccd-case-ui-toolkit
+rpx-xui-test
   └─ demo                           * Folder with demo application (MAY BE DELETED if not required) 
      ├─ src                         * Demo project
      |  ├─ app                      * Demo application sources. Adopt them with your library.
@@ -90,6 +90,6 @@ Install Yarn by following the [instructions](https://yarnpkg.com/en/docs/install
 
 ## Start project in watch mode
 - `yarn start:watch` for starting version of demo project and start watching for library changes.
-This command may be used simultaneously in combination with [ccd-case-ui-toolkit](https://github.com/hmcts/ccd-case-ui-toolkit)'s `yarn build:watch`. As a result once you change library source code it will be automatically re-compiled and in turn your demo-project will be automatically re-built and you will be able to see that changes in your browser instantly. 
+This command may be used simultaneously in combination with [rpx-xui-test](https://github.com/hmcts/rpx-xui-test)'s `yarn build:watch`. As a result once you change library source code it will be automatically re-compiled and in turn your demo-project will be automatically re-built and you will be able to see that changes in your browser instantly. 
 
-See [Development Workflow](https://github.com/hmcts/ccd-case-ui-toolkit#development-workflow) section of [ccd-case-ui-toolkit](hhttps://github.com/hmcts/ccd-case-ui-toolkit)'s README for more details.
+See [Development Workflow](https://github.com/hmcts/rpx-xui-test#development-workflow) section of [rpx-xui-test](hhttps://github.com/hmcts/rpx-xui-test)'s README for more details.

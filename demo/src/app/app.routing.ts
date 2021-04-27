@@ -1,6 +1,6 @@
 import { RouterModule } from '@angular/router';
 import { CaseCreateConsumerComponent } from './case-create-consumer.component';
-import { editorRouting, viewerRouting } from '@hmcts/ccd-case-ui-toolkit';
+import { editorRouting, viewerRouting } from '@hmcts/rpx-xui-test';
 import { CaseProgressConsumerComponent } from './case-progress-consumer.component';
 import { CoreComponent } from './core.component';
 import { CaseViewConsumerComponent } from './case-view-consumer.component';

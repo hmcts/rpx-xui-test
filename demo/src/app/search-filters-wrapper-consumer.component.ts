@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Jurisdiction, CaseType } from '@hmcts/ccd-case-ui-toolkit';
+import { Jurisdiction, CaseType } from '@hmcts/rpx-xui-test';
 
  @Component({
   selector: 'search-filters-wrapper-consumer',

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ccd-case-ui-toolkit": {
+    "rpx-xui-test": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ccd-case-ui-toolkit",
+            "outputPath": "dist/rpx-xui-test",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ccd-case-ui-toolkit:build"
+            "browserTarget": "rpx-xui-test:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ccd-case-ui-toolkit:build:production"
+              "browserTarget": "rpx-xui-test:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ccd-case-ui-toolkit:build"
+            "browserTarget": "rpx-xui-test:build"
           }
         },
         "test": {
@@ -87,7 +87,7 @@
         }
       }
     },
-    "ccd-case-ui-toolkit-e2e": {
+    "rpx-xui-test-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -95,11 +95,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ccd-case-ui-toolkit:serve"
+            "devServerTarget": "rpx-xui-test:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ccd-case-ui-toolkit:serve:production"
+              "devServerTarget": "rpx-xui-test:serve:production"
             }
           }
         },
@@ -115,5 +115,5 @@
       }
     }
   },
-  "defaultProject": "ccd-case-ui-toolkit"
+  "defaultProject": "rpx-xui-test"
 }
