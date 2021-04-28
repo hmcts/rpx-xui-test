@@ -1,0 +1,95 @@
+import { Component, Input, Output, EventEmitter, AfterViewInit, OnDestroy } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { Subject, Subscription } from 'rxjs';
+import { CaseField } from '../../../domain/definition/case-field.model';
+import { FormValueService } from '../../../services/form/form-value.service';
+import { debounceTime } from 'rxjs/operators';
+
+@Component({
+  selector: 'ccd-case-edit-form',
+  template: `
+    <ng-container ccdConditionalShowForm [formGroup]="formGroup" [caseFields]="fields" [contextFields]="caseFields"
+                  *ngFor="let field of fields">
+      <div ccdLabelSubstitutor
+           [caseField]="field" [formGroup]="formGroup" [contextFields]="caseFields">
+        <ng-container [ngSwitch]="field | ccdIsReadOnlyAndNotCollection ">
+          <ccd-field-read *ngSwitchCase="true" [caseField]="field" [caseFields]="caseFields" [withLabel]="true"
+                          [formGroup]="formGroup"></ccd-field-read>
+          <ng-container *ngSwitchCase="false">
+            <ng-container *ngIf="!(field | ccdIsCompound); else CompoundRow">
+              <ccd-field-write [caseField]="field"
+                               [caseFields]="caseFields"
+                               [formGroup]="formGroup"
+                               [idPrefix]=""
+                               [hidden]="field.hidden">
+              </ccd-field-write>
+            </ng-container>
+            <ng-template #CompoundRow>
+              <ccd-field-write [caseField]="field"
+                               [caseFields]="caseFields"
+                               [formGroup]="formGroup"
+                               [idPrefix]="field.id + '_'"
+                               [hidden]="field.hidden"></ccd-field-write>
+            </ng-template>
+          </ng-container>
+        </ng-container>
+      </div>
+    </ng-container>
+  `
+})
+export class CaseEditFormComponent implements OnDestroy, AfterViewInit {
+
+  @Input()
+  fields: CaseField[] = [];
+  @Input()
+  formGroup: FormGroup;
+  @Input()
+  caseFields: CaseField[] = [];
+  @Input()
+  pageChangeSubject: Subject<boolean> = new Subject();
+  @Output()
+  valuesChanged: EventEmitter<any> = new EventEmitter();
+
+  initial: any;
+  pageChangeSubscription: Subscription;
+  formGroupChangeSubscription: Subscription;
+
+  constructor(private formValueService: FormValueService) {}
+
+  ngOnDestroy() {
+    this.pageChangeSubscription.unsubscribe();
+    this.formGroupChangeSubscription.unsubscribe();
+  }
+
+  // We need the below un/subscribe complexity as we do not have proper page component per page with its AfterViewInit hook
+  // being called on each page load. This is done for "Cancel and return" modal from RDM-2302.
+  ngAfterViewInit(): void {
+    this.retrieveInitialFormValues();
+    this.pageChangeSubscription = this.pageChangeSubject.subscribe(() => {
+      this.formGroupChangeSubscription.unsubscribe();
+      // Timeout is required for the form to be rendered before subscription to form changes and initial form values retrieval.
+      setTimeout(() => {
+        this.subscribeToFormChanges();
+        this.retrieveInitialFormValues();
+      });
+    });
+    this.subscribeToFormChanges();
+  }
+
+  subscribeToFormChanges() {
+    this.formGroupChangeSubscription = this.formGroup.valueChanges
+      .pipe(
+        debounceTime(200)
+      )
+      .subscribe(_ => this.detectChangesAndEmit(_));
+  }
+
+  retrieveInitialFormValues() {
+    this.initial = JSON.stringify(this.formValueService.sanitise(this.formGroup.value));
+  }
+
+  detectChangesAndEmit(changes) {
+    const current = JSON.stringify(this.formValueService.sanitise(changes));
+    this.initial !== current ? this.valuesChanged.emit(true) : this.valuesChanged.emit(false);
+  }
+}
