@@ -1,6 +1,6 @@
 {
   "name": "@hmcts/rpx-xui-test",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "engines": {
     "yarn": "^1.12.3",
     "npm": "^5.6.0"
