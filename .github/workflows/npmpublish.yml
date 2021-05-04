@@ -1,15 +1,13 @@
-name: Node.js Package
+name: Main Workflow
 
 on:
-  pull_request:
-    branches:
-      - "*"
+  # Trigger analysis when pushing in master or pull requests, and when creating
+  # a pull request. 
   push:
     branches:
       - master
-      - refs/tags/*
-    tags:
-      - '*'
+  pull_request:
+      types: [opened, synchronize, reopened]
 
 jobs:
   build:
