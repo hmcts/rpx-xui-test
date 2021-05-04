@@ -3,8 +3,7 @@ name: Node.js Package
 on:
   pull_request:
     branches:
-      - master
-      - test
+      - "*"
   push:
     branches:
       - master
@@ -39,7 +38,7 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   publish-npm:
-    needs: build
+    needs: sonarcloud
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -55,7 +54,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_API_TOKEN }}
 
   publish-gpr:
-    needs: build
+    needs: sonarcloud
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
